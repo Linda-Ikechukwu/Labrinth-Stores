@@ -1,0 +1,36 @@
+.header {
+    height: 7rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  
+    .logo{
+      height: 100%;
+      width: 70px;
+      padding: .5rem;
+    }
+  
+    &_links {
+      width: 70%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+    
+    }
+
+    &_link, &_user {
+        padding: 1rem 1.5rem;
+        font-size: 1.6rem;
+        
+    }
+
+    &_link{
+        cursor: pointer;
+    }
+
+    &_user{
+        text-transform: capitalize;
+    }
+  }
