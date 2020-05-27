@@ -19,6 +19,7 @@ const config = {
 export const createUserProfileDocument = async (userAuth, additionalData) => {
     //if user is not signed in return
     if (!userAuth) return
+    
     //refrence to get or set data
     const userRef = firestore.doc(`users/${userAuth.uid}`);
      
