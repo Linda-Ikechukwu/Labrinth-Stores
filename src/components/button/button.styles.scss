@@ -15,6 +15,7 @@
     display: inline-block;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    text-align: center;
 
 
     &:not(:last-child){
@@ -35,6 +36,18 @@
             background-color: white;
             color: #4285f4;
             border: 1px solid #4285f4;
+        }
+    }
+
+    &-inverted{
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+
+        &:hover{
+            background-color: black;
+            color: white;
+            border: none;
         }
     }
 

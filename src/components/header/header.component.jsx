@@ -36,12 +36,13 @@ const Header = ({currentUser, hidden}) =>(
                     </Link>  
                 )
             }
-            {
-                hidden ? null : <CartIcon/>
-            }
             
+            <CartIcon></CartIcon>
         </div>
-        <CartDropdown/>
+        {
+            hidden ? null : <CartDropdown/>
+        }
+        
     </div>
 )
 
