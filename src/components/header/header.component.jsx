@@ -3,10 +3,13 @@ import {Link} from 'react-router-dom';
 import {auth} from '../../firebase/firebase.utils';
 import {connect} from 'react-redux';
 
+import CartIcon from '../cart-icon/cart-icon.component'
+import CartDropdown from '../cart-dropdown/cart-dropdown.component'
+
 import './header.styles.scss'
 
 
-const Header = ({currentUser}) =>(
+const Header = ({currentUser, hidden}) =>(
     <div className='header'>
         <Link to='/'>
            <img src='../../../assets/logo.png' className='logo' alt='Labrinth Clothing Logo'></img>
@@ -33,14 +36,19 @@ const Header = ({currentUser}) =>(
                     </Link>  
                 )
             }
+            {
+                hidden ? null : <CartIcon/>
+            }
+            
         </div>
-
+        <CartDropdown/>
     </div>
 )
 
 //To access root reducer 
-const mapStateToProps = (state) => ({
-   currentUser: state.user.currentUser
+const mapStateToProps = ({user: {currentUser}, cart: {hidden}}) => ({
+   currentUser,
+   hidden
 });
 
 export default connect(mapStateToProps)(Header);
